@@ -1,0 +1,3 @@
+1, so sánh các kiểu dữ liệu tuples / array
+2, so sánh void, undefined, never
+3, around interfaces

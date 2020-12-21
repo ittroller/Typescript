@@ -1,0 +1,51 @@
+1. Abstract:
+    là 1 class(hoặc phương thức abstract) nhưng không dùng để tạo ra 1 thực thể như cách tạo class thông thường
+    thuộc tính không được dùng từ khoá abstract
+    cú pháp: abstract <tên class>
+    là 1 bộ khung để tạo ra các class con, có thể nhiều class sẽ có 1 điểm chung nào đó -> sẽ tạo ra 1 lớp trừu tượng chung
+    nhưng lớp trừu tượng chỉ khai báo chứ không thực thi (khai báo để class con override)
+    không thể khởi tạo abstract class
+
+    về bản chất thì cách khởi tạo thì abstract khá giống với interface
+
+    điểm khác biệt là abstract là 1 class, có các phương thức/thuộc tính thể hiện cụ thể các tính chất của đối tượng
+    interface là 1 module khai báo các phương thức/thuộc tính để giúp thực thi module đó - không nhất thiết phải là thuộc tính hoặc phương thức
+
+    và 1 điểm nữa là abstract thì class con phải extends(kế thừa), còn interface thì dùng implement(thực thi)
+    mỗi class chỉ kế thừa 1 abstract class, 1 class có thể thực thi nhiều interface
+
+    phạm vi truy cập của các phương thức trong abstract class phải là public hoặc protected -> class con override lại
+
+
+2, Interface
+    là 1 template(mẫu), không phải 1 class
+    cú pháp: interface <tên>
+    các phương thức trong interface cũng chỉ được khai báo, ko được định nghĩa
+
+    class có thể implement nhiều interface
+    1 class implement 1 interface nào đó phải khai báo và định nghĩa lại các phương thức có trong interface đó
+    1 class có thể implement nhiều interface
+    
+    không thể khởi tạo interface(abstract cũng vậy)
+    phạm vi truy cập các phương thức phải là public
+    
+    * interface có thể extends với nhau
+
+
+====================
+
+Sự khác nhau giữa interface và abstract class
+    Tất cả phương thức trong interface luôn luôn(được hiểu) là abstract.
+    Các phương thức trong abstract class là abstract hoặc không phải là abstract.
+    Có thể implements nhiều interface nhưng không thể extends trực tiếp nhiều class.
+    Các phương thức trong interface luôn luôn phải để là public, khác với abstract class có thể là public, private hoặc protected.
+
+
+
+Sự giống nhau giữa interface và abstract class
+    Không thể tạo một biến kiểu interface hoặc abstract class.
+    Nếu là phương thức abstract thì phải được khai báo lại trong class con.
+    Cả interface và abstract class đều có tính kế thừa.
+    Khi nào thì sử dụng interface, khi nào sử dụng abstract class
+    Khi một nhóm đối tượng có cùng bản chất kế thừa từ một class thì sử dụng abstract class.
+    Khi một nhóm đối tượng không có cùng bản chất nhưng chúng có hành động giống nhau thì sử dụng interface.

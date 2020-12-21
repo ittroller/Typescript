@@ -1,0 +1,65 @@
+1, Lỗi: Cannot redeclare block-scoped variable
+    fix = cách thêm: export {} vào cuối file
+
+2, Instance method modifiers
+    public: this method can be called any where, any time
+    private: this method can only be called by other methods in this class
+    protected: this method can be called by other methods in this class, or by other methods in child classes
+
+3, parcel-bundler : tool run .ts in browser
+
+4, union types : number | string | array ...
+
+5, never, nullable, readonly in typescript 2.0
+    readonly chỉ gắn giá trị lúc tạo hoặc constructure, ko gắn lại được, chỉ read
+
+6, ... spread
+ ... in parameter : rest
+
+7, static : có thể truy cập tới phương thức/ thuộc tính static bằng cách gọi theo tên class mà không cần khởi tạo class đó
+
+8, namespaces and modules
+    namespaces:     organize applycation with JS objects
+                    can be split up over multiple Files
+                    no Module loader required
+                    Dependencies get difficult to manage in bigger Applications
+
+    modules:        organize applycation with real modules
+                    can be split up over multiple Files
+                    Module loader required
+                    Explicit Dependency Declaration
+
+9, generic
+    là viết các class, function và kiểu dữ liệu mà không định nghĩa trước ra các loại dữ liệu sẽ sử dụng.
+    khái niệm khá giống với prototype
+
+10, decorators
+    Decorator có thể coi như một cú pháp khai báo đặc biệt, không bao giờ đứng độc lập mà luôn được gắn kèm với một khai báo class, method, property hoặc accessor, được viết dưới cú pháp dạng @expression, với expression trỏ tới một function sẽ được gọi tới ở runtime, có nhiệm vụ thay đổi hoặc bổ sung cho đối tượng được decorate.
+    
+    Nếu chúng ta muốn tùy chỉnh cách áp dụng decorator cho khai báo, chúng ta có thể viết decorator factory.
+    Decorator Factory chỉ đơn giản là một hàm trả về biểu thức sẽ được gọi bởi decorator trong thời gian chạy.
+    example:
+        function color(value: string) {
+            // this is the decorator factory
+            return function (target) {
+                // this is the decorator
+                // do something with 'target' and 'value'...
+            };
+        }
+    Nếu sử dụng decorator composition:
+        các biểu thức thực thi sẽ chạy(chạy trước) từ trên xuống
+        các thương thức trả về sẽ chạy từ dưới lên
+
+    Trong TS có 5 loại decorator
+        * class decorator
+        * method decorator
+        * property decorator
+        * accessor decorator
+        * parameter decorator
+
+    Class decorator: được khai báo trước khi khai báo class ngay bên trên và nó apply cho contructor của class để sử dụng, chỉnh sửa or thay thế định nghĩa của class.
+
+    Method decorator khai báo ngay trước phương thức
+        được áp dụng cho Property Descriptor(Bộ mô tả thuộc tính) cho phương thức và có thể được sử dụng để quan sát, sửa đổi hoặc thay thế định nghĩa phương thức.
+
+    ....

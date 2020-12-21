@@ -1,0 +1,29 @@
+Tính đóng gói
+    Tính đóng gói (encapsulation) và che giấu thông tin (information hiding)
+    Tính chất này không cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng. 
+    Chỉ có các phương thức nội tại của đối tượng cho phép thay đổi trạng thái của nó. Việc cho phép môi trường bên ngoài tác động lên các dữ liệu nội tại của một đối tượng theo cách nào là hoàn toàn tùy thuộc vào người viết mã. 
+    Đây là tính chất đảm bảo sự toàn vẹn của đối tượng.
+
+    VD: bạn có 1 bài toán đã giải (class), người ta muốn xem cách giải, bạn bảo, để bạn giải mẫu chứ ko nói tới cách giải
+
+    Kinh nghiệm sử dụng: 
+        class tạo ra chỉ chạy 1 lần duy nhất đầu tiên
+        tạo các class validate (method được gọi để check còn bên trong nó check cái j thì người code mới biết)
+        nhưng class liên quan tới giới hạn, giá trị không thể tiết lộ
+        dùng để gọi các phương thức phức tạp, các thuật toán không thể chia sẽ thông qua 1 hoặc nhiều phương thức gọi lại khác
+
+
+
+Private constructor và Singleton pattern
+    là 1 design pattern (Hạn chế của việc khởi tạo một lớp cho một cá thể duy nhất, Tuy nhiên, mỗi khi chúng ta sử dụng lớp, nó sẽ là đối tượng giống như lần đầu tiên chúng ta tạo)
+    pattern này đảm bảo rằng một lớp chỉ có một cá thể (một cá thể là bản sao duy nhất của một lớp) và thông qua Singleton, dev được cung cấp một điểm chung để truy cập vào các phương thức và thuộc tính của cá thể đó
+    ---> xem ví dụ ở file singleton1.ts
+
+    và cũng tức là khởi tạo 1 singleton, chứ không phải extends (thông thường thì nhiều class extends 1 class nào đó rồi override)
+    singleton class chỉ có thể implement các interface, không thể extends class khác
+
+
+    Ví dụ dễ hình dung của singleton là 1 class quản lý trạng thái đăng nhập của user, dù cho nhiều user, thì cũng 1 trạng thái cuối cùng (mô phỏng tương tự ví dụ ở singleton1.ts)
+
+    Các Singleton có thể lazy load (load bất đồng bộ) -> có khả năng tăng cường hiệu suất khởi động của ứng dụng
+    tuy nhiên, trên các ngôn ngữ đa luồng, việc triển khai một Singleton được lazy load có thể gây ra sự cố về nhiều bản tạo trên nhiều luồng, phá vỡ mô hình, nếu không được khai báo là đồng bộ các luồng (threads).
